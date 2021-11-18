@@ -182,7 +182,7 @@ class ScrollSpy extends BaseComponent {
       return
     }
 
-    for (let i = this._offsets.length; i--;) {
+    for (const i of this._offsets.keys()) {
       const isActiveTarget = this._activeTarget !== this._targets[i] &&
           scrollTop >= this._offsets[i] &&
           (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1])
